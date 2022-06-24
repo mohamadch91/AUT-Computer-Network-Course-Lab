@@ -1,0 +1,76 @@
+
+!
+Version 12.3
+service timestamps debug uptime
+service timestamps log uptime
+service password-encryption
+!
+hostname mamad
+enable secret 5 $1$tWwq$fUoH2SV42xVzZsVSsgzQVw
+enable password mypassword
+!
+!
+username myname password mypassword
+!
+!
+!
+ip subnet-zero
+!
+ip cef
+no ip domain-lookup
+!
+!
+!
+!
+!
+!
+!
+!
+interface Serial0/0/0
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface Serial0/0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/0
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+interface FastEthernet0/1
+ no ip address
+ no ip directed-broadcast
+ shutdown
+!
+!
+!
+!
+!
+ip classless
+no ip http server
+!
+!
+!
+!
+!
+!
+!
+banner motd ^C
+salaam mamad^C
+line con 0
+ login local
+ password boson
+ history size 100
+line aux 0
+line vty 0 4
+ login 
+ password boson
+!
+!
+no scheduler allocate
+end
+
